@@ -7,21 +7,12 @@ using UnityEngine;
 [CustomEditor(typeof(MovingBox))]
 public class MovingBoxEditor : Editor
 {
-    SerializedProperty horizontal;
-
-    SerializedProperty speed;
-    SerializedProperty min;
-    SerializedProperty max;
-
+    private SerializedProperty speed;
     private SerializedProperty offsets;
 
     private void OnEnable()
     {
-        horizontal = serializedObject.FindProperty("horizontal");
         speed = serializedObject.FindProperty("speed");
-        min = serializedObject.FindProperty("left");
-        max = serializedObject.FindProperty("right");
-
         offsets = serializedObject.FindProperty("offsets");
     }
 
@@ -49,6 +40,7 @@ public class MovingBoxEditor : Editor
 
     private bool DrawProperty(SerializedProperty p, int index)
     {
+        // make the with short so it fits on one line
         EditorGUIUtility.labelWidth = 70;
         EditorGUILayout.BeginHorizontal();
 

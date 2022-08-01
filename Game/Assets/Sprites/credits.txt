@@ -1,9 +1,12 @@
 Art
-https://opengameart.org/content/wood-texture-tiles CC0
-https://opengameart.org/node/11958 CC3.0
+woods https://opengameart.org/content/wood-texture-tiles CC0
+grass block https://opengameart.org/node/11958 CC3.0
+background https://opengameart.org/content/10-seamless-grass-textures-that-are-2048-x-2048-grass-1png CC0
 
 
 Sounds
-https://freesound.org/people/JarredGibb/sounds/219472/ CC0
-https://freesound.org/people/volkbutphan/sounds/485486/ CC0
-https://freesound.org/people/bone666138/sounds/198874/ CC0
+Soundtrack https://freesound.org/people/Magmi.Soundtracks/sounds/513958/ CC4 - attribution
+Button clicked https://freesound.org/people/JarredGibb/sounds/219472/ CC0
+Button hover https://freesound.org/people/volkbutphan/sounds/485486/ CC0
+Victory https://freesound.org/people/bone666138/sounds/198874/ CC0
+Boost https://freesound.org/people/colorsCrimsonTears/sounds/585803/ CC0

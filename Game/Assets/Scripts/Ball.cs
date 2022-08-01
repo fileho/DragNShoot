@@ -11,7 +11,7 @@ public class Ball : MonoBehaviour
     private ShootDrawer shootDrawer;
     private SpriteRenderer spriteRenderer;
     private Vector2 startPos;
-    private float minSpeed = 0.15f;
+    private const float minSpeed = 0.15f;
 
     private bool initialized = false;
     private bool cancel = false;
@@ -106,7 +106,7 @@ public class Ball : MonoBehaviour
         // input is blocked (settings)
         if (rb.velocity.magnitude > minSpeed || interactable > 0)
         {
-            float col = 0.7f;
+            float col = 0.85f;
             spriteRenderer.color = new Color(col, col, col);
 
             initialized = false;

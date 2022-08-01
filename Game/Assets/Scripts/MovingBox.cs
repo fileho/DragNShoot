@@ -1,10 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
-using Unity.Mathematics;
 using UnityEngine;
-using Vector2 = UnityEngine.Vector2;
-using Vector3 = UnityEngine.Vector3;
 
 public class MovingBox : MonoBehaviour
 {
@@ -21,13 +16,11 @@ public class MovingBox : MonoBehaviour
         public bool horizontal;
     }
 
-
     [SerializeField] private List<OffsetData> offsets = new List<OffsetData>();
 
     private List<Vector3> worldPositions;
     private int currentGoal = 1;
     private int movementDirection = 1;
-
 
     private Vector3 position;
     private Vector2 velocity;
@@ -113,7 +106,7 @@ public class MovingBox : MonoBehaviour
         Gizmos.color = Color.cyan;
         box = GetComponent<BoxCollider2D>();
         float r = Mathf.Max(box.size.x / 2, box.size.y / 2);
-        
+
         for (var index = 0; index < worldPositions.Count; index++)
         {
             var worldPosition = worldPositions[index];
@@ -121,8 +114,6 @@ public class MovingBox : MonoBehaviour
             if (index > 0)
                 Gizmos.DrawLine(worldPosition, worldPositions[index - 1]);
         }
-
-
     }
 #endif
 
