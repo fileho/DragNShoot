@@ -36,6 +36,9 @@ public class Ball : MonoBehaviour
 
     void Update()
     {
+        if (interactable > 0)
+            return;
+
         // Has to be called in update not in fixed Update to work in both simulation modes
         HandleInput();
     }
@@ -141,7 +144,7 @@ public class Ball : MonoBehaviour
             vector = vector.normalized * maxSpeed;
         }
 
-        const float minDistance = 1f;
+        const float minDistance = 1.5f;
 
         return vector.magnitude > minDistance ? vector : Vector2.zero;
     }

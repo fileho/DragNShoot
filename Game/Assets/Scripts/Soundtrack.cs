@@ -33,7 +33,7 @@ public class Soundtrack : MonoBehaviour
 
     public void VolumeChanged()
     {
-        audioSource.volume = Save.Instance.data.soundtrackVolume * 0.5f;
+        audioSource.volume = Save.Instance.SoundtrackVolume() * 0.5f;
     }
 
 

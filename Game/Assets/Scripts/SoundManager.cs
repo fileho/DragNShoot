@@ -56,7 +56,7 @@ public class SoundManager : MonoBehaviour
 
         AudioSource audioSource = GetAudioSource();
 
-        audioSource.volume = speed * Save.Instance.data.sfxVolume;
+        audioSource.volume = speed * Save.Instance.SfxVolume();
         audioSource.PlayOneShot(bounce);
     }
 
@@ -84,7 +84,7 @@ public class SoundManager : MonoBehaviour
     {
         AudioSource audioSource = GetAudioSource();
 
-        audioSource.volume = Save.Instance.data.sfxVolume * volume;
+        audioSource.volume = Save.Instance.SfxVolume() * volume;
         audioSource.PlayOneShot(clip);
     }
 

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    private Data data;
+    private Save data;
     private int maxLevel;
 
     private List<Button> levels;
@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        data = Save.Instance.data;
+        data = Save.Instance;
 
         EnableLevels();
     }
@@ -60,7 +60,7 @@ public class MainMenu : MonoBehaviour
     public void ResetData()
     {
         SoundManager.instance.PlayButtonClicked();
-        data.Reset();
+        data.ResetSave();
         EnableLevels();
     }
 

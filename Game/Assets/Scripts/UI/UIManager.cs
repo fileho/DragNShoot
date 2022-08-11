@@ -57,6 +57,7 @@ public class UIManager : MonoBehaviour
     {
         SoundManager.instance.PlayButtonClicked();
         bool active = settings.activeSelf;
+        Ball.instance.StopAiming();
 
         if (!active)
             Ball.instance.SetInteractable(1);
@@ -73,6 +74,18 @@ public class UIManager : MonoBehaviour
         SoundManager.instance.PlayButtonHover();
     }
 
+    public void SettingHover()
+    {
+        ButtonHover();
+        Ball.instance.SetInteractable(1);
+        Ball.instance.StopAiming();
+    }
+
+    public void SettingEndHover()
+    {
+        Ball.instance.StopAiming();
+        Ball.instance.SetInteractable(-1);
+    }
 
     public void DrawWin()
     {

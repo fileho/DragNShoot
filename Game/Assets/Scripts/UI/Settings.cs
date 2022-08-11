@@ -23,13 +23,13 @@ public class Settings : MonoBehaviour
         aimMode = transform.Find("Buttons").Find("AimMode").GetComponentInChildren<Text>();
         AimMode(true);
 
-        var data = Save.Instance.data;
+        var data = Save.Instance;
 
         Slider soundtrack = transform.Find("Soundtrack").GetComponent<Slider>();
-        soundtrack.value = data.soundtrackVolume;
+        soundtrack.value = data.SoundtrackVolume();
         soundtrack.onValueChanged.AddListener(SoundtrackChanged);
         Slider sfx = transform.Find("Sfx").GetComponent<Slider>();
-        sfx.value = data.sfxVolume;
+        sfx.value = data.SfxVolume();
         sfx.onValueChanged.AddListener(SfxChanged);
 
         uiManager = GetComponentInParent<UIManager>();
@@ -45,10 +45,11 @@ public class Settings : MonoBehaviour
     private void AimMode(bool init)
     {
         if (!init)
-            Save.Instance.data.stickToBall = !Save.Instance.data.stickToBall;
+            Save.Instance.SwapBallMode();
+
         string text1 = "Stick to Ball";
         string text2 = "Free Aim";
-        aimMode.text = Save.Instance.data.stickToBall ? text1 : text2;
+        aimMode.text = Save.Instance.StickToBall() ? text1 : text2;
     }
 
     public void Menu()
@@ -69,12 +70,12 @@ public class Settings : MonoBehaviour
 
     private void SfxChanged(float value)
     {
-        Save.Instance.data.sfxVolume = value;
+        Save.Instance.SetSfxVolume(value);
     }
 
     private void SoundtrackChanged(float value)
     {
-        Save.Instance.data.soundtrackVolume = value;
+        Save.Instance.SetSoundTrackVolume(value);
         Soundtrack.instance.VolumeChanged();
     }
 
